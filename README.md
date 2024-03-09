@@ -28,3 +28,41 @@ example : git remote add origin https://github.com/sanjayexplorer/apnacollage-de
 
 check hidden folder in project =>
 git ls -a
+
+how to check modified files in project =>
+git status
+
+
+how many status in git =>
+
+untracked(new files that git does not yet track)
+
+modified(changed files)
+
+staged(files that ready to commit)
+
+unmodified(unchanged)
+
+-----map------
+
+untracked(untracked files that new created )
+                |
+                |
+                v
+modified(changed files)
+                |
+                |
+                v
+staged(files that ready to commit)
+                |
+                |
+                v
+unmodified(unchanged)
+
+create file
+write in file
+check how many files are changed (git status)
+then add files to push in repo(git add .)
+then commit(git commit -m 'comment')
+git push
+then check in repo
