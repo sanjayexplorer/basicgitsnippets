@@ -1,4 +1,4 @@
-# apnacollage-demo
+# basicgitsnippets
 This is my first git repository
 <br>
 Author sanjayexplorer
@@ -20,11 +20,11 @@ git config --global user.email
 
 git add remote to access project from github profile =>
 git remote add origin <repository_url>
-example : git remote add origin https://github.com/sanjayexplorer/apnacollage-demo
+example : git remote add origin https://github.com/sanjayexplorer/basicgitsnippets
 
 clone a copy of project from github profile =>
 git remote add origin <repository_url>
-example : git remote add origin https://github.com/sanjayexplorer/apnacollage-demo
+example : git remote add origin https://github.com/sanjayexplorer/basicgitsnippets
 
 check hidden folder in project =>
 git ls -a
