@@ -5,11 +5,6 @@ Author sanjayexplorer
 
 <-----------git notes--------------->
 
-my git hub account
-user name : sanjayexplorer
-user email : barethsanjay37@gmail.com
-user pass : @companynameand@last2digitsphonenumber
-
 git init globaly =>
 git config --global user.name "Your New Name"
 git config --global user.email "your.new.email@example.com"
