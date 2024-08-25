@@ -17,8 +17,8 @@ git remote add origin <repository_url>
 example : git remote add origin https://github.com/sanjayexplorer/basicgitsnippets
 
 clone a copy of project from github profile =>
-git remote add origin <repository_url>
-example : git remote add origin https://github.com/sanjayexplorer/basicgitsnippets
+git clone <repository_url>
+example : git clone https://github.com/sanjayexplorer/basicgitsnippets
 
 check hidden folder in project =>
 git ls -a
