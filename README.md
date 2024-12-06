@@ -60,3 +60,27 @@ then add files to push in repo(git add .)
 then commit(git commit -m 'comment')
 git push
 then check in repo
+
+
+
+
+
+
+React Native 
+* How to build apk
+Ans: 
+1. first create expo account on expo website
+2. npm install -g eas-cli
+3. eas login
+4. eas build:configure
+5. eas build -p android --profile preview [OR] eas build -p android --profile production 
+
+----------------------
+keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+
+java -jar bundletool-all-1.17.1.jar build-apks --bundle=application-07993c7b-460d-464f-932a-6c943c2faa60.aab --output=rentalx.apks --mode=universal --ks=my-release-key.keystore --ks-key-alias=my-key-alias --ks-pass=pass:sanjay@123 --key-pass=pass:sanjay@123
+
+
+
+
+
