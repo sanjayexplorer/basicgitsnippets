@@ -292,6 +292,69 @@ java -jar bundletool-all-1.17.1.jar build-apks --bundle=application-07993c7b-460
             $(".loader").css("display", "none");
             $(".overlay_sections").css("display", "none");
     });
+-------------------------------
+
+php artisan queue:table
+php artisan migrate
+
+php artisan make:job SendEmailJob
 
 
+
+<?php
+
+namespace App\Jobs;
+
+use Mail;
+use App\Mail\YourEmail;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+
+class SendEmailJob implements ShouldQueue
+{
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    protected $email;
+
+    public function __construct($email)
+    {
+        $this->email = $email;
+    }
+
+    public function handle()
+    {
+        Mail::to($this->email)->send(new YourEmail());
+    }
+}
+
+
+use App\Jobs\SendEmailJob;
+
+public function sendEmail(Request $request)
+{
+    // Dispatch the job to the queue
+    SendEmailJob::dispatch($request->email);
+
+    return response()->json('Email will be sent!');
+}
+
+
+
+php artisan queue:work
+
+
+
+php artisan queue:failed
+
+php artisan queue:retry all
+
+php artisan queue:flush
+
+SendEmailJob::dispatch($request->email)->delay(now()->addMinutes(10));
+
+public $timeout = 120;  // Timeout in seconds
+public $tries = 3;      // Number of retry attempts
 
