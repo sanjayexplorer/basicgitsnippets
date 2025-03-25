@@ -358,3 +358,69 @@ SendEmailJob::dispatch($request->email)->delay(now()->addMinutes(10));
 public $timeout = 120;  // Timeout in seconds
 public $tries = 3;      // Number of retry attempts
 
+
+
+
+------------------------------
+php artisan make:event StudentCreated
+
+namespace App\Events;
+
+use App\Models\Student;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class StudentCreated
+{
+    use Dispatchable, SerializesModels;
+
+    public $student;
+
+    public function __construct(Student $student)
+    {
+        $this->student = $student;
+    }
+}
+
+
+
+php artisan make:listener SendStudentNotification --event=StudentCreated
+
+namespace App\Listeners;
+
+use App\Events\StudentCreated;
+use Illuminate\Support\Facades\Log;
+
+class SendStudentNotification
+{
+    public function handle(StudentCreated $event)
+    {
+        // Example: Log event or send notification
+        Log::info("A new student has been created: " . $event->student->name);
+    }
+}
+
+
+protected $listen = [
+    \App\Events\StudentCreated::class => [
+        \App\Listeners\SendStudentNotification::class,
+    ],
+];
+
+php artisan event:cache
+
+
+use App\Events\StudentCreated;
+use App\Models\Student;
+use Illuminate\Http\Request;
+
+public function store(Request $request)
+{
+    $student = Student::create($request->all());
+
+    // Dispatch the event
+    event(new StudentCreated($student));
+
+    return response()->json(['message' => 'Student created successfully']);
+}
+
