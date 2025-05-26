@@ -1,68 +1,55 @@
-# basicgitsnippets
-<br>
-Author sanjayexplorer
+📁 Basic Git Snippets
+Author: Sanjay Explorer
 
-<-----------git notes--------------->
+🔧 Git Configuration
+Set Global Git User
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
 
-git init globaly =>
-git config --global user.name "Your New Name"
-git config --global user.email "your.new.email@example.com"
-
-how to check git init in system and git details =>
+Check Global Git Config
 git config --global user.name
 git config --global user.email
 
-git add remote to access project from github profile =>
+🌐 Remote Repository
+Add Remote Origin
 git remote add origin <repository_url>
-example : git remote add origin https://github.com/sanjayexplorer/basicgitsnippets
+# Example:
+git remote add origin https://github.com/sanjayexplorer/basicgitsnippets
 
-clone a copy of project from github profile =>
+Clone Repository
 git clone <repository_url>
-example : git clone https://github.com/sanjayexplorer/basicgitsnippets
+# Example:
+git clone https://github.com/sanjayexplorer/basicgitsnippets
 
-check hidden folder in project =>
-git ls -a
-
-how to check modified files in project =>
+📂 Git Basics
+Check Hidden .git Folder
+ls -a
 git status
 
+🔄 Git File Status Lifecycle
+untracked -> modified -> staged -> committed -> unmodified
+Untracked: New files not tracked by Git
 
-how many status in git =>
+Modified: Tracked files with changes
 
-untracked(new files that git does not yet track)
+Staged: Files added and ready to commit
 
-modified(changed files)
+Unmodified: Files with no changes
 
-staged(files that ready to commit)
+Example Workflow
 
-unmodified(unchanged)
+# 1. Create or edit files
+# 2. Check changes
+git status
 
------map------
+# 3. Stage files
+git add .
 
-untracked(untracked files that new created )
-                |
-                |
-                v
-modified(changed files)
-                |
-                |
-                v
-staged(files that ready to commit)
-                |
-                |
-                v
-unmodified(unchanged)
+# 4. Commit changes
+git commit -m "Your message"
 
-create file
-write in file
-check how many files are changed (git status)
-then add files to push in repo(git add .)
-then commit(git commit -m 'comment')
-git push
-then check in repo
-
-
-
+# 5. Push to GitHub
+git push origin main
 
 
 
