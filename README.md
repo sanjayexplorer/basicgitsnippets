@@ -55,17 +55,16 @@ Unmodified: Files with no changes
 
 🧪 Example Workflow
 
-# 1. Create or edit files
-# 2. Check changes
+# 1. Check changes
 git status
 
-# 3. Stage files
+# 2. Stage files
 git add .
 
-# 4. Commit changes
+# 3. Commit changes
 git commit -m "Your message"
 
-# 5. Push to GitHub
+# 4. Push to GitHub
 git push origin main
 
 📦 Working with Branches
