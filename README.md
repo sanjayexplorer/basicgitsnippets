@@ -1,5 +1,5 @@
 📁 Basic Git Snippets
-Author: Sanjay Explorer
+Author: Sanjay Explorer 2iQUKWqdx1NeXRVM
 
 🔧 Git Configuration
 
