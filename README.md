@@ -115,3 +115,28 @@ git log --oneline
 View File History
 git log <file>
 
+FOR INSTALL TAILWIND IN LARAVEL PROJECT
+
+1. upload tailwindcss file in root project folder
+2. then create tailwind-input.css in public/css/tailwind-input.css
+3. then paste these lines in tailwind-input.cs ->>>>>>>>>>>>>>>>> @tailwind base;
+@tailwind components;
+@tailwind utilities;
+then make tailwind.config.js file in project root folder and paste these lines
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+then run this command ->>>>>>>>>>>>>>>>>>> ./tailwindcss -i public/css/tailwind-input.css -o public/css/tailwind-output.css --watch 
+then you can include tailwind-output.css in layout page 
+
+ 
